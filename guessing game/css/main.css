@@ -1,0 +1,160 @@
+#alert{
+    max-width: 350px;
+    margin: auto;
+    border: 2px solid rgba(255, 255, 255, 0.252);
+    box-shadow: 1px -3px 5px rgba(0, 0, 0, 0.262) inset, 0px 3px 5px rgba(0, 0, 0, 0.322) inset;
+}
+.attempt p{
+    background-color: rgba(243, 16, 16, 0.927);
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.705);
+}
+
+.footer-wrapper{
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(246, 70, 40, 0.742);
+    color: rgb(255, 255, 255) !important;
+}
+.footer-wrapper i{
+    font-size: 20pt;
+    cursor: pointer;
+}
+body img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0.1;
+}
+@media screen and (max-width: 420px){
+    body{
+        background: linear-gradient(45deg, rgb(48, 1, 48), rgb(152, 9, 9));
+        background-repeat: no-repeat;
+        padding: 0;
+        font-family: sans-serif;
+        min-height: 100vh;
+    }
+    nav{
+        color: white;
+        background: linear-gradient(127deg, rgba(48, 1, 48, 0.007), rgb(223, 31, 31), rgba(48, 1, 48, 0));
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.222);
+    }
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        flex-direction: row;
+        align-items: end;
+        transform-origin: left top;
+        padding: 0;
+        justify-content: space-around;
+    }
+    nav li{
+        padding: 20px 5px;
+        border-bottom: 2px solid transparent;
+    }
+    nav li:hover{
+        border-bottom: rgba(255, 255, 255, 0.419) 2px solid;
+        transition: 1s ease;
+    }
+    .wrapper{
+        background: linear-gradient(45deg,rgb(152, 9, 9),rgba(10, 0, 10, 0));
+        width: 500px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.195);
+        border-radius: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.385);
+        margin: 50px 0;
+    }
+    .wrapper i{
+        font-size: 54px !important;
+    }
+    
+    nav .nav-active{
+        border-bottom: 2px solid rgba(255, 255, 0, 0.381);
+    }
+    .takeinput{
+        border-radius: 5px 0 0 5px;
+        padding: 6px 30px;
+        border: none;
+        font-size: 24pt;
+        width: 100%;
+    }
+    .submitbtn{
+        border-radius: 0 5px 5px 0 ;
+        padding: 6px 10px;
+        border: none;
+        font-size: 10pt;
+    }
+
+}
+
+@media screen and (min-width:421px) {
+    body{
+        background: linear-gradient(45deg, rgb(48, 1, 48), rgb(152, 9, 9));
+        background-repeat: no-repeat;
+        min-width: 100vw;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    nav{
+        color: white;
+        background: linear-gradient(127deg, rgba(48, 1, 48, 0.007), rgb(223, 31, 31), rgba(48, 1, 48, 0));
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.222);
+    }
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        padding: 0 30px;
+        margin: 0;
+        flex-direction: row;
+        align-items: end;
+    }
+    nav li{
+        padding: 20px 20px;
+        border-bottom: 2px solid transparent;
+    }
+    nav li:hover{
+        border-bottom: rgba(255, 255, 255, 0.419) 2px solid;
+        transition: 1s ease;
+    }
+    .wrapper{
+        background: linear-gradient(45deg,rgb(152, 9, 9),rgba(10, 0, 10, 0));
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.195);
+        border-radius: 20px;
+        border: 3px solid rgba(255, 255, 255, 0.112);
+        margin: 50px 0;
+    }
+    .wrapper i{
+        font-size: 100px !important;
+    }
+        
+    nav .nav-active{
+        border-bottom: 2px solid rgba(255, 255, 0, 0.381);
+    }
+    .takeinput{
+        border-radius: 50px 0 0 50px;
+        padding: 6px 30px;
+        border: none;
+        font-size: 24pt;
+        width: 30%;
+    }
+    .submitbtn{
+        border-radius: 0  50px 50px 0;
+        padding: 6px 10px;
+        border: none;
+        font-size: 20pt;
+    }
+}
+
+
+
