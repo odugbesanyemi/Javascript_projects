@@ -121,7 +121,7 @@ nav .nav-active{
     background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
-    transform: scale(80%);
+    transform: scale(60%);
 }
 .scoreboard{
     background-color: rgba(245, 245, 245, 0.571);
