@@ -11,24 +11,35 @@
     <title>whats the number?</title>
 </head>
 <body>
-    <div class="">
-        <nav>
+    <div class="mb-5 pb-4">
+        <nav class="mb-5">
             <ul class="container">
                 <ul class="p-0">
                     <li class="fw-bold text-danger" style="font-family:monospace;">GUESSORE</li>
                 </ul>
-                <ul class="ms-md-auto p-0">
-                    <button type="button" class="btn btn-outline-white shadow-none">Login</button>
-                    <button class="btn btn-outline-white shadow-none">Register</button>
+                <ul class="ms-md-auto p-0 username">
+                    <button class="btn btn-outline-white shadow-none registerBtn">Sign in</button>
                 </ul>
     
             </ul>
         </nav>
-        <div class="container " style="padding-bottom:50px;" >
-            <div class="container wrapper text-danger text-center py-4">
-                <i class="fa-solid fa-gamepad fs-1"></i>
+        <div class="gif"></div>
+        <div class="container mx-auto my-3">
+            <div class="d-flex scoreboard opacity-1">
+                <div class="col-4 score-icon">
+                </div>
+                <div class="col-8 py-2 ms-2">
+                    <p class="fs-5 m-0"><strong> Score :</strong> <span class="score1"></span></p>
+                    <p class="mb-0"><strong>wallet :</strong>  $ <span class="wallet text-warning"></span></p>
+                    <p class="text-warning"><strong>Login: </strong>  <span class="loginDate"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="container " style="padding-bottom:10px; " >
+            <div class="container wrapper text-center py-4">
+                <img src="assets/confused.png" width="100px" alt="">
                 <h3 class="pt-4 m-0">Guess the right number</h3>
-                <p class="mb-4">Try guess the right number.<strong>  Note: </strong>you are giving 10 Trials</p>
+                <p class="mb-4">Try guess the right number.<br><strong>  Note: </strong>you are giving 10 Trials</p>
                 <form action="#">
                     <p id="alert" class="p-3 my-3"></p>
                     <div class="d-flex justify-content-center">
@@ -42,15 +53,39 @@
                 </div>
             </div>
         </div>
+     
         <div class="footer">
+            <div class="showOptions container">
+                <h4>Options</h4>
+            </div>               
             <div class="footer-wrapper d-flex">
-                <div><i class="fa-solid fa-burger"></i></div>
-                <div><i class="fa-solid fa-gears"></i></div>
-                <div><i class="fa-solid fa-clipboard"></i></div>
-                <div><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                <div><i class="fa-solid fa-burger dashboard-link"></i></div>
+                <div><i class="fa-solid fa-gears settings-link" ></i></div>
+                <div><i class="fa-solid fa-clipboard score-link position-relative"></i><span class="badge position-absolute rounded-pill top-2 translate-middle text-dark bg-warning score"></span></div>
+                <div><i class="fa-solid fa-arrow-right-from-bracket logout-link"></i></div>
             </div>
         </div>
-    
+        <div class="loginframe hidden">
+            <div class="text-center">
+                <h1>Login</h1>
+                <p>Welcome, Kindly fill your data</p>    
+            </div>
+            <form action="">
+                <div class="input-group py-2">
+                    <label for="username">Username</label></br>
+                    <input type="text" name="" id="username">
+                </div>
+                <div class="input-group py-2">
+                    <label for="password">Password</label></br>
+                    <input type="password" name="" id="password" class="ms-auto">
+                </div>
+                <div class="text-center">
+                    <input type="button" value="Register" id="registersubmit" class="text-center my-3 mx-auto">
+                </div>
+            </form>
+
+        </div>
+
     </div>
 </body>
 <script src="js/main.js"></script>

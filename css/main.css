@@ -1,7 +1,10 @@
 body{
     background: url('../assets/park-7153125.png');
 }
-
+.gif img{
+    position: absolute;
+    width: 100%;
+}
 #alert{
     max-width: 500px;
     min-width: 300px;
@@ -30,7 +33,7 @@ body{
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    bottom: 0;
+    bottom: -1px;
     width: 100%;
     padding: 18px 0;
     background-color: rgb(255, 255, 255);
@@ -40,14 +43,26 @@ body{
     font-size: 20pt;
     cursor: pointer;
 }
-body img{
-    position: absolute;
-    top: 0;
+.showOptions{
+    min-height: 0;
     width: 100%;
-    height: 100%;
-    z-index: 0.1;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 20px 0 0;
 }
 
+.loginframe{
+    position: absolute;
+    top: 50%;
+    background:linear-gradient(45deg,rgba(211, 211, 211, 0.162), rgba(255, 255, 255, 0.632), rgba(194, 194, 194, 0.162) ) ;
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(226, 2, 2, 0.312);
+}
 
 nav{
     color: rgb(73, 73, 255);
@@ -72,10 +87,10 @@ nav li:hover{
 }
 .wrapper{
     border-radius: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.527);
-    margin: 50px 0;
-    background-color: rgba(255, 255, 255, 0.481);
-    backdrop-filter: blur(10px);
+    margin: 0 0 50px 0;
+    background-color: rgba(245, 245, 245, 0.571);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.13);
 }
 .wrapper i{
     font-size: 100px !important;
@@ -98,7 +113,27 @@ nav .nav-active{
     border: none;
     font-size: 12pt;
 }
-
+.hidden{
+    display: none;
+}
+.score-icon{
+    background: url("../assets/speedometer.png");
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(80%);
+}
+.scoreboard{
+    background-color: rgba(245, 245, 245, 0.571);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.13);
+    border-radius: 20px;
+}
+.refreshBtn{
+    width: 100%;
+    padding: 15px !important;
+    font-size: 15pt !important;
+}
 @media screen and (max-width: 420px){
     
 
