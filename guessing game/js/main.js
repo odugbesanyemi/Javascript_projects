@@ -208,5 +208,4 @@ function addscore(){
 //end of score board function
 let score1 = document.querySelector('.score1');
 score1.textContent = score.textContent;
-//for wallet 
-//1. we will check number of attempts that a user has left and multiply X 0.01
+//toggle for options 
