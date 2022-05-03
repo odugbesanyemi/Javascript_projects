@@ -1,5 +1,29 @@
-body{
-    background: linear-gradient(45deg,purple,orange);
-    background-repeat: no-repeat;
-    min-height: 100vh;
+.col-md-6 a{
+    width: 200px;
+    margin: 30px auto;
+}
+.bounce{
+    animation-name: bounce;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes bounce {
+    0%{
+        position: relative;
+        top: 30px;
+        transform: rotate3d(0deg);
+
+    }
+    50%{
+        position: relative;
+        top: 0px;
+        transform:scaleX(80%);
+        transform: rotate3d(360deg)
+    }
+    100%{
+        position: relative;
+        top: 30px;
+        transform: rotate3d(0deg);
+    }
 }
