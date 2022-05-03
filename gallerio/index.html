@@ -9,34 +9,36 @@
     <title>Gallerio- View your pictures</title>
 </head>
 <body>
-    <header class="bg-success">
-        <div class="brand  py-3 d-flex flex-row text-white align-items-center sticky-top container">
-            <div class="d-flex align-items-center">
-                <img src="../assets/picture.png" width="50" alt="">
-                <h1 class="ps-3">Gallerio</h1>    
+    <div>
+        <header class="bg-success">
+            <div class="brand  py-3 d-flex flex-row text-white align-items-center sticky-top container">
+                <div class="d-flex align-items-center">
+                    <img src="../assets/picture.png" width="50" alt="">
+                    <h1 class="ps-3">Gallerio</h1>    
+                </div>
+                <ul class="links d-flex justify-content-around ms-auto">
+                    <li class="px-md-4 px-2"><a href="../index.html" class="text-white">Home</a> </li>
+                    <li class="px-md-4 px-2"><a href="about.html" class="text-white">About</a></li>
+                </ul>
             </div>
-            <ul class="links d-flex justify-content-around ms-auto">
-                <li class="px-md-4 px-2">Home</li>
-                <li class="px-md-4 px-2">Projects</li>
-                <li class="px-md-4 px-2">About</li>
-            </ul>
+        </header>
+        <div class="category mt-5 text-center">
+            <div class="">
+                <input type="button" value="Nature" class="btn btn-success mx-md-2 natureBtn">
+                <input type="button" value="Technology" class="btn btn-warning mx-md-2 techBtn">
+                <input type="button" value="love" class="btn btn-danger mx-md-2 loveBtn">
+            </div>
         </div>
-    </header>
-    <div class="category mt-5 text-center">
-        <div class="">
-            <input type="button" value="Nature" class="btn btn-success mx-md-2 natureBtn">
-            <input type="button" value="Technology" class="btn btn-warning mx-md-2 techBtn">
-            <input type="button" value="love" class="btn btn-danger mx-md-2 loveBtn">
+        <div class="showcase">
+            <div class="frame">
+                <img src="assets/tech/1.jpg" alt="">
+            </div>
+            <div class="controls d-flex flex-row justify-content-around align-items-center fixed-bottom mb-4">
+                <img src="assets/previous-track.png" alt="" type="button" id="prev">
+                <img src="assets/next-button.png" alt="" type ="button" id="next">
+            </div>
         </div>
-    </div>
-    <div class="showcase">
-        <div class="frame">
-            <img src="assets/tech/1.jpg" alt="">
-        </div>
-        <div class="controls d-flex flex-row justify-content-around align-items-center fixed-bottom mb-4">
-            <img src="assets/previous-track.png" alt="" type="button" id="prev">
-            <img src="assets/next-button.png" alt="" type ="button" id="next">
-        </div>
+    
     </div>
 </body>
 <script src="js/main.js"></script>

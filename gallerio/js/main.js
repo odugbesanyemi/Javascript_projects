@@ -12,8 +12,9 @@ natureBtn.onclick = () => {
     picNum = 1;
     //let the frame img src choose from
     target.setAttribute('src',"assets/nature/"+ picNum  + ".jpg");
+    prevBtn.style.opacity = "0.1";
     prevBtn.onclick = () => {
-        if(picNum < 5 && picNum != 1 ){
+        if(picNum <= 5 && picNum != 1 ){
             picNum--;
             target.setAttribute('src',"assets/nature/"+ picNum  + ".jpg");
         }
@@ -23,11 +24,12 @@ natureBtn.onclick = () => {
     }
     nextBtn.onclick = () => {
         if(picNum < 5){
+            prevBtn.style.opacity = "1";
             picNum ++;
             target.setAttribute('src',"assets/nature/"+ picNum  + ".jpg");
         }
-        else if(picNum = 0){
-            picNum = 1
+        if(picNum == 5){
+            nextBtn.style.opacity.toggle = "0.1";
         }
     }
 }
@@ -37,7 +39,7 @@ techBtn.onclick = () => {
     //let the frame img src choose from
     target.setAttribute('src',"assets/tech/"+ picNum  + ".jpg");
     prevBtn.onclick = () => {
-        if(picNum <= 5 && picNum != 1){
+        if(picNum <= 4 && picNum != 1){
             picNum--;
             target.setAttribute('src',"assets/tech/"+ picNum  + ".jpg");
         }
@@ -46,7 +48,7 @@ techBtn.onclick = () => {
         }
     }
     nextBtn.onclick = () => {
-        if(picNum < 5){
+        if(picNum < 4){
             picNum ++;
             target.setAttribute('src',"assets/tech/"+ picNum  + ".jpg");
         }

@@ -3,6 +3,7 @@ body{
     min-height: 100vh;
     background: linear-gradient(45deg, rgb(34, 34, 34), black);
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 .brand h1{
     font-family: 'water brush', cursive;
@@ -36,4 +37,10 @@ li{
 ul{
     list-style-type: none;
     margin: 0;
+}
+h1{
+    font-family: serif;
+}
+h2{
+    font-family: serif;
 }
