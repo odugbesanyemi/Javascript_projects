@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(238, 238, 238);
+}
+.card{
+    background-color: white;
+    min-width: 250px;
+    height: 400px;
+}
+.card-head{
+    width: 100%;
+}
+.card-head img{
+    width: 200px;
+}
