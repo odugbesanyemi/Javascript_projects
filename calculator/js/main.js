@@ -1,7 +1,9 @@
-let operator_btns = document.querySelectorAll('.operator_btns button');
+let operator_btns = document.querySelectorAll('.operator');
 let digit_btns = document.querySelectorAll('.digit');
 let equalbtn = document.querySelector('.equalbtn');
 let screen = document.querySelector('.screen')
+let clearBtn = document.querySelector('.clear')
+let delBtn = document.querySelector('.delete')
 let firstNumber;
 let secondNumber;
 let operator;
@@ -21,6 +23,19 @@ let multiply = (x,y) => {
 }
 
 // whatever button the user hits should be displayed to screen.textcontent
+clearBtn.onclick =() =>{
+    screen.textContent =""
+    firstNumber = ""
+    secondNumber =""
+}
+delBtn.onclick = () =>{
+    //we want to be able to delete the numbers from right to left
+    let len = screen.textContent.length
+    let text = screen.textContent
+    let newText = text.substr(0,len-1)
+    screen.textContent = newText
+    
+}
 
 for(const x of digit_btns){
     x.onclick = () =>{
@@ -45,16 +60,16 @@ for (const x of operator_btns) {
 
 equalbtn.onclick =() =>{
     secondNumber = screen.textContent
-    if(operator == "plus"){
+    if(operator.contains("plus") ){
         screen.textContent = add(Number(firstNumber),Number(secondNumber))
     }
-    else if(operator == "divide"){
+    else if(operator.contains('divide')){
         screen.textContent = division(Number(firstNumber),Number(secondNumber))
     }
-    else if(operator == "minus"){
+    else if(operator.contains('minus')){
         screen.textContent = minus(Number(firstNumber),Number(secondNumber))
     }
-    else if (operator == "multiply"){
+    else if (operator.contains('multiply')){
         screen.textContent = multiply(Number(firstNumber),Number(secondNumber))
     }
 }
