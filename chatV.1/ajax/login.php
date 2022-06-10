@@ -1,5 +1,10 @@
+<!--connect database and check if user's credentials are saved in the database. else, kindly send a message to the user telling him/her that the password is wrong-->
+<?php
+// connect database
+include('../includes/dbconn.php');
+// 
+?>
 <?php include('../includes/header.php') ?>
-
 <!-- signin page -->
 <div style="text-align:center; color:white;">
     <p style="color:purple; margin:0; margin-top:30px;">Existing User?</p>
