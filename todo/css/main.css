@@ -1,0 +1,55 @@
+@font-face {
+    font-family: poppins;
+    src: url('../../fonts/Poppins-Medium.ttf');
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg,rgb(213, 213, 255),rgb(255, 213, 237));
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: poppins;
+    font-size: 10px;
+    font-weight: lighter;
+}
+.todo-head{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(213, 213, 255)  ;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.027);
+    padding: 10px 0;
+}
+.todo-body{
+    padding: 50px 0;
+}
+.tasks{
+    min-width: 300px;
+    background-color: rgb(255, 255, 255);
+    padding: 5px 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.048);
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input[type='checkbox'] {
+    background-color: red;
+    transform: scale(150%);
+}
+.actions img{
+    padding: 0 10px;
+}
+.addBtn{
+    position: fixed;
+    top: 80vh;
+    left: 75vw;
+    transition: ease-in-out 1s;
+}
+.addBtn:hover{
+    transform: rotateZ(240deg);
+}
