@@ -1,9 +1,8 @@
-<?php include('../includes/header.php'); ?>
+<?php 
+include('../includes/header.php'); ?>
 <?php include('../includes/dbconn.php'); ?>
 <?php
-
-$message = "";
-
+$message;
 if (isset($_POST['register'])){
 // we want to check if the username is already choosen
     $username = $_POST['username'];
@@ -11,7 +10,8 @@ if (isset($_POST['register'])){
     $query = mysqli_query($conn,$sql);
     if (mysqli_num_rows($query)>0){
         // meaning there is a username registered already
-        echo 'Error name already saved';
+        $message = "Username already exists";
+        header('location:'.$_SERVER['PHP_SELF']);
     }else{
         // sanitize post data and send to the database
         if(!empty($_POST['username'] && $_POST['emailAddress'] && $_POST['password'] && $_POST['tel'])){
@@ -25,6 +25,8 @@ if (isset($_POST['register'])){
             $param_password = $_POST['password'];
         if(mysqli_stmt_execute($stmt)){
             $message = "Successfully registered, Login to Begin.";
+            header('location:login.php');
+
         }
         }
         }else{
@@ -32,6 +34,10 @@ if (isset($_POST['register'])){
         }
     }
 }
+if (!empty($message)){
+    $_SESSION['message'] = $message;       
+}
+
 ?>
 <!-- signin page -->
 <div style="text-align:center; color:white;">

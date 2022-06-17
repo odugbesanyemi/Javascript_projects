@@ -11,9 +11,7 @@
     <div class="message shadow">
         <img src="assets/connection.png" width="20%" alt="">
         <div>
-
             <p>Connect with friends better</p>
-
         </div>
     </div>
     <div class="begin_btn ">

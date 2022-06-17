@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,3 +26,12 @@
         </div>
         <img src="../assets/list.png" width="25px" height="25px" alt="">
     </div>
+    
+    <?php
+        if(isset($_SESSION['message'])){
+            echo ' <div class="alert">'. $_SESSION['message'] . '</div>' ;
+            unset($_SESSION['message']); 
+        }else{
+            // do nothing
+        }
+    ?>

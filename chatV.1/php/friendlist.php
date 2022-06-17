@@ -1,8 +1,8 @@
 <!-- we want to have a list of all the users categorized by those online and those offline and those who are friends  -->
 <!-- we will check with php if the user is logged in if not we want to redirect them to the login page -->
 <?php
+include('../includes/header.php');
 // activate session
-session_start();
 // check if isset session value logged in
 if(isset($_SESSION['logged_in'])){
 // do nothing 
@@ -12,7 +12,6 @@ if(isset($_SESSION['logged_in'])){
 }
 
 ?>
-<?php include('../includes/header.php') ?>
 <!-- this is the user bar component -->
 <?php include ('../includes/usercomponent.php')?>
 <div id="root">
