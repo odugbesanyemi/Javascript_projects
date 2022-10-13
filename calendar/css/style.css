@@ -46,6 +46,7 @@
     font-size: 150%;
     font-weight: bold;
     color: rgba(35, 18, 3, 0.758);
+    position: relative;
 }
 .calendar-body div:hover{
     background-color: rgba(255, 255, 255, 0.327);
@@ -64,7 +65,43 @@
     color: rgba(31, 31, 31, 0.492) !important;
     border: 1px solid rgba(255, 255, 255, 0.303) !important;
 }
+/* my-modal styles */
+.my_modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    width: 70%;
+    min-width: 60%;
+    min-height: 150px;
+    background-color: white;
+    position: fixed;
+    border-radius: 5px;
+}
+.my_modal_header{}
+.my_modal_body{
+    max-height: 200px;
+    overflow-y: auto;
+}
+.my_modal_footer{}
+table,td{
+    border: none !important;
+}
+.notify-active{
+    position: absolute;
+    width: 15px;
+    max-height: 15px;
+    border-radius: 50%;
+    top: -50%;
+    left: 80%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.181);
+    background-color: greenyellow !important;
 
+}
 @media screen and (max-width:600px) {
     .calendar-body{
         display: grid;
