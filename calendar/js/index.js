@@ -1,27 +1,19 @@
 // create a function that adds a value to an event object
 let myEvents = []
-myEvents = [{
-    id:1,
-    event_name:['Wash clothe','clean Bathroom','do Home-work', 'sleep'],
-    date:'Thu Oct 13 2022',
-    desc:['',''],
-},{
-    id:2,
-    event_name:['Wash clothe','clean Bathroom','do Home-work', 'sleep'],
-    date:'Wed Oct 12 2022',
-    desc:['',''],
-}]
+// myEvents = [{
+//     id:0,
+//     event_name:['Wash clothe','clean Bathroom','do Home-work', 'sleep'],
+//     date:'Thu Oct 13 2022',
+//     desc:['',''],
+// },{
+//     id:1,
+//     event_name:['Wash clothe','clean Bathroom','do Home-work', 'sleep'],
+//     date:'Wed Oct 12 2022',
+//     desc:['',''],
+// }]
 const calendarBody = document.querySelector('.calendar-body')
 
 console.log(myEvents)
-let checkBooked = () =>{
-    for(let index =0; index <myEvents.length;index++){
-        const Element = myEvents[index].date
-        if(Element == selectedDate){
-            dateElement.textContent =""
-        }
-    }
-}
 // start of myCalendar Function
 const myCalendar = (year,month) => {
     let current_month = month - 1
@@ -79,10 +71,7 @@ for (let index = 0; index < current_month_count; index++) {
     }
     dateElement.setAttribute('role','button')
     dateElement.textContent = index+1
-    let selectedDate = new Date(defaultYear,monthArray.indexOf(month_name.textContent),dateElement.textContent).toDateString()
-    // --------------------------------------------------------
-    checkBooked
-    // --------------------------------------------------------
+    dateElement.classList.add('calen-day')
     calendarBody.append(dateElement)
     // return dateElement
 }
@@ -102,6 +91,21 @@ for (let index = 0; index < remaining_grid; index++) {
 
 }
 // --- end of my calendar() function
+let check_filled = () => {
+    for (const x of document.querySelectorAll('.calen-day')) {
+        for (const y of myEvents) {
+            let selected_date = new Date(defaultYear, monthArray.indexOf(month_name.textContent), x.textContent).toDateString()
+            if (selected_date == y.date) {
+                // check first if there is already the notify_active
+                let notify_active = document.createElement('div')
+                x.innerHTML = `${x.textContent}<div class="notify-active rounded-circle" ><a href="" data-bs-toggle="tooltip" data-bs-title="Default tooltip"></div>
+                `
+            }
+        }
+    }
+}
+
+
 // here we add the controls
 let monthArray = ['January','Februray','March','April','May','June','July','August','September','October','November','December']
 let defaultYear = new Date().getFullYear()
@@ -121,6 +125,7 @@ prev_btn.onclick =() =>{
         let new_active = --active_month
         month_name.textContent = monthArray[new_active]
         myCalendar(defaultYear,new_active+1)
+        check_filled()
     }
 }
 next_btn.onclick = () => {
@@ -131,6 +136,7 @@ next_btn.onclick = () => {
         let new_active = ++active_month
         month_name.textContent = monthArray[new_active]
         myCalendar(defaultYear,new_active+1)
+        check_filled()
     }
 }
 // function to close modal
@@ -149,10 +155,10 @@ let closeModal =(btn, modal_div)=>{
 // Begining functions for adding, showing and deleting Data
 const addEvent = (event,index) =>{
     // check if event doesn't exist
-    let add_modal_body = document.querySelector('.add_modal_body')
+    let add_modal_footer = document.querySelector('.add_modal_footer')
     let my_modal_footer = document.querySelector('.my_modal_footer')
     let my_modal = document.querySelector('.my_modal')
-    let add_event_btn = add_modal_body.querySelector(':scope #add_event_btn') 
+    let add_event_btn = add_modal_footer.querySelector(':scope #add_event_btn') 
     let add_modal = document.querySelector('#add_modal')
     let event_title = document.querySelector('#event_title')
     let event_desc = document.querySelector('#event_desc')
@@ -175,6 +181,7 @@ const addEvent = (event,index) =>{
                 })
                 console.log(myEvents)
                 add_modal.classList.toggle('collapse')
+                check_filled()
             }
         }
     }else{
@@ -184,12 +191,28 @@ const addEvent = (event,index) =>{
             // first clear the modal_body then add the form for collecting data
             my_modal.classList.toggle('collapse')
             add_modal.classList.toggle('collapse')
+            add_event_btn.onclick = () => {
+                // push the message to the object
+                for (const x of myEvents) {
+                    if (x.id == index){
+                        // this is where we will be inputing the data
+                        let desc = x.desc
+                        let titl = x.event_name
+                        titl.push(event_title.value)
+                        desc.push(event_desc.value)
+                        console.log(myEvents)
+                        add_modal.classList.toggle('collapse')
+                        check_filled()
+                    }
+                }
+            }
         }
     }
-
-
 }
-const deleteEvent = ()=>{}
+const deleteEvent = (index)=>{
+
+    
+}
 const showEvents = (result_count,selectedDate,data_index) =>{
     let my_modal_body = document.querySelector('.my_modal_body')
     let my_modal_footer = document.querySelector('.my_modal_footer')
@@ -262,3 +285,5 @@ const showEvents = (result_count,selectedDate,data_index) =>{
 // End of events management 
 // -------------------------------------------------------
 // -------------------------------------------
+// show dates with event
+check_filled()

@@ -4,10 +4,11 @@
 .calendar-view{
     min-width: 60%;
     max-width: 100%; 
+    min-height: 100vh;
     margin: auto;
     padding: 3%;
     /* background-color: white; */
-    background:linear-gradient(45deg,rgb(255, 106, 0),rgb(255, 221, 0)),url('../assets/76465be29d569c472727be6a411ad880.jpg');
+    background-color:rgba(248, 39, 39, 0.364);
     background-blend-mode: screen;
 }
 .calendar-head{
@@ -95,12 +96,20 @@ table,td{
     position: absolute;
     width: 15px;
     max-height: 15px;
-    border-radius: 50%;
+    border-radius: 80px;
     top: -50%;
     left: 80%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.181);
-    background-color: greenyellow !important;
-
+    /* box-shadow: 0 0 25px rgba(0, 0, 0, 0.181); */
+    background-color: rgba(255, 0, 0, 0.604) !important;
+    animation: scaleupDown 3s ease infinite;
+}
+@keyframes scaleupDown {
+    0%{
+        transform: scale(50%);
+        background-color: red !important;
+    }
+    50%{transform: scale(150%);}
+    100%{transform: scale(50%);}
 }
 @media screen and (max-width:600px) {
     .calendar-body{
@@ -109,5 +118,8 @@ table,td{
         grid-template-rows: repeat(6,50px);
         text-align: center;
         gap: 10px 10px;
+    }
+    .my_modal{
+        width: 85%;
     }
 }
