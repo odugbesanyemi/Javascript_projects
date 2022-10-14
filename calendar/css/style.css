@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
 .calendar-view{
     min-width: 60%;
     max-width: 100%; 
@@ -100,8 +101,12 @@ table,td{
     top: -50%;
     left: 80%;
     /* box-shadow: 0 0 25px rgba(0, 0, 0, 0.181); */
-    background-color: rgba(255, 0, 0, 0.604) !important;
+    background-color: rgb(2, 119, 55) !important;
     animation: scaleupDown 3s ease infinite;
+}
+.date_para{
+    background-color: black !important;
+    color: white;
 }
 @keyframes scaleupDown {
     0%{

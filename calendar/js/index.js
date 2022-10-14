@@ -245,6 +245,10 @@ const showEvents = (result_count,selectedDate,data_index) =>{
         table_thead.append(table_tr)
         table_tr.innerHTML = head_content
         date_para.textContent = selectedDate
+        date_para.style.backgroundColor = 'grey'
+        date_para.style.color = "white"
+        date_para.style.padding= "5px"
+        date_para.style.borderRadius = '5px'
         data_table.classList.add('border-0')
         my_modal_body.append(date_para)
         my_modal_body.append(data_table)
@@ -269,14 +273,18 @@ const showEvents = (result_count,selectedDate,data_index) =>{
         // no data available so display no events and make the continue button serve as next modal to add event
         // show the date and the alert message
         let date_para = document.createElement('span')
-        let error_h2 = document.createElement('h2')
+        let error_h2 = document.createElement('h3')
         let info_para = document.createElement('p')
-        info_para.innerHTML +="You currently do not have any Events Saved for This date. To add an event to this date, click <b>Continue</b> below."
+        info_para.classList.add('mb-0')
+        info_para.innerHTML +="You currently do not have any Events Saved for This date. To add an event to this date, click <b>Add Event</b> below."
         error_h2.textContent = 'No Saved Event'
-        error_h2.classList.add(['text-danger','fs-2'])
+        error_h2.classList.add(['text-danger','fs-2','mt-3'])
         date_para.textContent = selectedDate
-        date_para.classList.add(['text-white','fs-3','rounded','rounded-pill','bg-warning'])
-
+        date_para.classList.add(['text-white','fs-3','date_para'])
+        date_para.style.backgroundColor = 'grey'
+        date_para.style.color = "white"
+        date_para.style.padding= "5px"
+        date_para.style.borderRadius = '5px'
         my_modal_body.append(date_para)
         my_modal_body.append(error_h2)
         my_modal_body.append(info_para)
